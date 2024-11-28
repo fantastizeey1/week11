@@ -99,7 +99,7 @@ const AlgorithmVisualizer: React.FC<AlgorithmVisualizerProps> = ({
       />
 
       <button
-        onClick={handleRun}npm ru
+        onClick={handleRun}
         className="mt-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 ease-in-out shadow-lg transform hover:scale-105"
       >
         Run Algorithm
