@@ -89,10 +89,10 @@ const AlgorithmVisualizer: React.FC<AlgorithmVisualizerProps> = ({
         placeholder={
           selectedAlgorithm in searchAlgorithms
             ? selectedAlgorithm === "Binary Search"
-              ? '{ "arr": [1, 2, 3, 7, 8], "target": 7 }'
-              : '{ "arr": [3, 1, 2], "target": 2 }'
+              ? 'Enter input as JSON (e.g., { "arr": [1, 2, 3, 7, 8], "target": 7 })'
+              : 'Enter input as JSON (e.g., { "arr": [3, 1, 2], "target": 2 })'
             : selectedAlgorithm in sortingAlgorithms
-            ? "[3, 1, 2, 8, 7]"
+            ? "Enter input as JSON (e.g., [3, 1, 2, 8, 7])"
             : "Enter input as JSON"
         }
         className="w-full h-32 border border-gray-300 p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200 ease-in-out"
