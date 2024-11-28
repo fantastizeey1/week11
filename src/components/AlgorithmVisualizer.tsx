@@ -3,12 +3,16 @@ import { sortingAlgorithms } from "../algorithms/sort";
 import { searchAlgorithms } from "../algorithms/search";
 
 // Define the union type for algorithm names
+// type AlgorithmNames =
+//   | "Bubble Sort"
+//   | "Quick Sort"
+//   | "Merge Sort"
+//   | "Linear Search"
+//   | "Binary Search";
+
 type AlgorithmNames =
-  | "Bubble Sort"
-  | "Quick Sort"
-  | "Merge Sort"
-  | "Linear Search"
-  | "Binary Search";
+  | keyof typeof searchAlgorithms
+  | keyof typeof sortingAlgorithms;
 
 type AlgorithmVisualizerProps = {
   selectedAlgorithm: AlgorithmNames;
@@ -50,7 +54,9 @@ const AlgorithmVisualizer: React.FC<AlgorithmVisualizerProps> = ({
           return;
         }
         const { arr, target } = parsedInput;
-        output = searchAlgorithms[selectedAlgorithm]?.(arr, target);
+        output = searchAlgorithms[
+          selectedAlgorithm as keyof typeof searchAlgorithms
+        ]?.(arr, target);
       } else if (selectedAlgorithm in sortingAlgorithms) {
         if (!Array.isArray(parsedInput)) {
           setResult(
@@ -58,7 +64,10 @@ const AlgorithmVisualizer: React.FC<AlgorithmVisualizerProps> = ({
           );
           return;
         }
-        output = sortingAlgorithms[selectedAlgorithm]?.(parsedInput);
+        output =
+          sortingAlgorithms[
+            selectedAlgorithm as keyof typeof sortingAlgorithms
+          ]?.(parsedInput);
       }
 
       setResult(JSON.stringify(output, null, 2));

@@ -4,7 +4,7 @@ import AlgorithmVisualizer from "./components/AlgorithmVisualizer";
 import CodeDisplay from "./components/CodeDisplay";
 
 const App: React.FC = () => {
-  const [selectedAlgorithm, setSelectedAlgorithm] = useState<string>("");
+  const [selectedAlgorithm, setSelectedAlgorithm] = useState<any>("");
 
   return (
     <div className="p-6">
