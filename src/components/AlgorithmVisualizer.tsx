@@ -77,32 +77,36 @@ const AlgorithmVisualizer: React.FC<AlgorithmVisualizerProps> = ({
   };
 
   return (
-    <div className="bg-white shadow p-6 rounded-lg">
-      <h2 className="text-xl font-semibold mb-4">
-        Selected Algorithm: {selectedAlgorithm}
+    <div className="bg-white shadow-xl p-8 rounded-lg max-w-2xl mx-auto">
+      <h2 className="text-2xl font-semibold text-gray-800 mb-6">
+        Selected Algorithm:{" "}
+        <span className="text-blue-600">{selectedAlgorithm}</span>
       </h2>
+
       <textarea
         value={input}
         onChange={(e) => setInput(e.target.value)}
         placeholder={
           selectedAlgorithm in searchAlgorithms
             ? selectedAlgorithm === "Binary Search"
-              ? 'Enter input as JSON (e.g., { "arr": [1, 2, 3, 7, 8], "target": 7 })'
-              : 'Enter input as JSON (e.g., { "arr": [3, 1, 2], "target": 2 })'
+              ? '{ "arr": [1, 2, 3, 7, 8], "target": 7 }'
+              : '{ "arr": [3, 1, 2], "target": 2 }'
             : selectedAlgorithm in sortingAlgorithms
-            ? "Enter input as JSON (e.g., [3, 1, 2, 8, 7])"
+            ? "[3, 1, 2, 8, 7]"
             : "Enter input as JSON"
         }
-        className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
+        className="w-full h-32 border border-gray-300 p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200 ease-in-out"
       />
+
       <button
         onClick={handleRun}
-        className="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg transition"
+        className="mt-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 ease-in-out shadow-lg transform hover:scale-105"
       >
         Run Algorithm
       </button>
+
       {result && (
-        <pre className="mt-4 bg-gray-200 text-gray-800 p-4 rounded-lg whitespace-pre-wrap">
+        <pre className="mt-6 bg-gray-100 text-gray-800 p-4 rounded-lg whitespace-pre-wrap shadow-md border-l-4 border-blue-500">
           {result}
         </pre>
       )}
