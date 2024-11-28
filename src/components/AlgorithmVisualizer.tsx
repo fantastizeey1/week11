@@ -95,11 +95,11 @@ const AlgorithmVisualizer: React.FC<AlgorithmVisualizerProps> = ({
             ? "Enter input as JSON (e.g., [3, 1, 2, 8, 7])"
             : "Enter input as JSON"
         }
-        className="w-full h-32 border border-gray-300 p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200 ease-in-out"
+        className="w-full h-32 border border-gray-300 p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200 ease-in-out text-black"
       />
 
       <button
-        onClick={handleRun}
+        onClick={handleRun}npm ru
         className="mt-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 ease-in-out shadow-lg transform hover:scale-105"
       >
         Run Algorithm
